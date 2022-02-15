@@ -12,6 +12,12 @@ const[enterAge,setEnterAge]=useState('');
 
   const addUserHandler = (event) => {
     event.preventDefault();
+    if(enterUsername.trim().length === 0 || enterAge.length === 0 ){
+      return;
+    }
+    if(+enterAge <1){
+      return;
+    }
     console.log(enterUsername,enterAge);
     setEnterAge('');
     setEnterUsername('');
